@@ -1,6 +1,7 @@
 import { test, expect } from "@playwright/test";
 import "dotenv/config";
 
+
 test("basics", async ({ page }) => {
   await test.step("open checkboxes page", async () => {
     await page.goto("/checkboxes");
@@ -21,7 +22,7 @@ test("basics", async ({ page }) => {
   });
 });
 
-test.only("Basic test for fill inputs", async ({ page }) => {
+test("Basic test for fill inputs", async ({ page }) => {
   await test.step("open login page", async () => {
     await page.goto("/login");
     const classExample = page.locator(".example");

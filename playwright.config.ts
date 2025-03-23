@@ -43,6 +43,15 @@ export default defineConfig({
       }
     },
     {
+      name: "playwright",
+      use: {
+        ...devices['Desktop Chrome']
+      }
+    },
+    {
+      name: "no.browser",
+    },
+    {
       name: "prod",
       use: {
         baseURL: "https://google.com", ...devices['Desktop Chrome'],
