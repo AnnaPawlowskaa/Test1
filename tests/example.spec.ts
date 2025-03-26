@@ -1,10 +1,11 @@
 import { test, expect } from "@playwright/test";
 import "dotenv/config";
+import { urls } from '../helpers/data' ;
 
 
 test("basics", async ({ page }) => {
   await test.step("open checkboxes page", async () => {
-    await page.goto("/checkboxes");
+    await page.goto(urls.herokuappURL + "/checkboxes");
     const classExample = page.locator(".example");
     await expect(classExample).toBeVisible();
     await expect(classExample).toContainText("Checkboxes");
@@ -24,7 +25,7 @@ test("basics", async ({ page }) => {
 
 test("Basic test for fill inputs", async ({ page }) => {
   await test.step("open login page", async () => {
-    await page.goto("/login");
+    await page.goto(urls.herokuappURL + "/login");
     const classExample = page.locator(".example");
     await expect(classExample).toBeVisible();
     await expect(classExample).toContainText(
@@ -58,7 +59,7 @@ test("Basic test for fill inputs", async ({ page }) => {
 
 test("basic test for dropdown", async ({ page }) => {
   await test.step("go to dropdown page", async () => {
-    await page.goto("/dropdown");
+    await page.goto(urls.herokuappURL + "/dropdown");
     const header = page.getByRole("heading");
     await expect(header).toContainText("Dropdown List");
   });

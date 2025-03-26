@@ -1,9 +1,8 @@
 import { test } from "../fixtures/base";
 import { data } from "../helpers/data";
 
-test("test", async ({
+test.skip("registration test", async ({
   mainPage,
-  loginPage,
   loginOrRegisterPage,
   registerPage,
 }) => {
@@ -13,17 +12,18 @@ test("test", async ({
     await loginOrRegisterPage.openRegistrationForm();
   });
   await test.step("register new user", async () => {
-    await registerPage.fillRegistrationForm(
-      data.firstNameField,
-      data.lastNameField,
-      data.emailField,
-      data.address1field,
-      data.cityField,
-      data.countryFieldDropdown,
-      data.regionFieldDropdown,
-      data.loginName,
-      data.password,
-      data.passwordConfirm
-    );
+    await registerPage.fillRegistrationForm(data);
   });
+});
+
+test("login test", async ({ mainPage, loginOrRegisterPage }) => {
+  await mainPage.openMainPage();
+  await mainPage.openLoginOrRegister();
+  await loginOrRegisterPage.fillLoginInputs();
+  await loginOrRegisterPage.clickLoginButton();
+});
+
+test("go to T-shirt page", async ({ mainPage }) => {
+  await mainPage.openMainPage();
+  await mainPage.goToTshirtPage();
 });

@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx playwright test --project=dev",
+    "api": "npx playwright test tests/api.spec.ts --project=no.browser",
+    "dev": "npx playwright test --project=chrome",
+    "dev.visible": "npx playwright test --project=chrome --headed",
     "dates": "npx playwright test tests/dates.spec.ts --project=no.browser",
     "faker": "npx playwright test tests/faker.spec.ts --project=no.browser",
-    "dev.visible": "npx playwright test --project=dev --headed",
-    "prod": "npx playwright test --project=prod",
-    "playwright": "npx playwright test tests/pw.spec.ts --project=playwright"
+    "store": "npx playwright test --project=store"
   },
   "repository": {
     "type": "git",
