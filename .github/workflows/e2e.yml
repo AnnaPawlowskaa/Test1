@@ -5,6 +5,9 @@ env:
   PASSWORD2: ${{ secrets.PASSWORD2}}
 
 on:
+  schedule:
+  #//crontab.guru to check cron syntax
+  - cron: '0 10 * * 7' 
   push:
     branches: [ "main" ]
   pull_request:
