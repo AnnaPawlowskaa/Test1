@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "api": "npx playwright test tests/api.spec.ts --project=no.browser",
-    "login": "npx playwright test tests/login.spec.ts --project=chrome --headed",
-    "login.nobrowser": "npx playwright test tests/login.spec.ts --project=no.browser",
+    "login": "npx playwright test tests/pw.spec.ts --project=chrome --headed",
+    "login.nobrowser": "npx playwright test tests/pw.spec.ts --project=no.browser",
     "dev": "npx playwright test --project=chrome",
     "dev.visible": "npx playwright test --project=chrome --headed",
     "dates": "npx playwright test tests/dates.spec.ts --project=no.browser",
