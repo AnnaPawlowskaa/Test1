@@ -16,6 +16,7 @@ test.beforeAll("generate token", async ({ request }) => {
   const responseBody = await response.json();
   expect(response.status()).toBe(200);
   token = responseBody.token;
+
 });
 
 test.skip("GET api all", async ({ request }) => {
@@ -87,16 +88,19 @@ test("Get user", async ({ request }) => {
   console.log("response", responseBody);
 });
 
-test("change books in the cart", async ({ request }) => {
-  const response = await request.put(`${urls.api}/BookStore/v1/Books/9781593277574`, {
-    headers: {
-      Authorization: "Bearer " + token,
-    },
-    data: {
-      userId: userId,
-      isbn: ISBN,
-    },
-  });
+test.skip("change books in the cart", async ({ request }) => {
+  const response = await request.put(
+    `${urls.api}/BookStore/v1/Books/9781449337711`,
+    {
+      headers: {
+        Authorization: "Bearer " + token,
+      },
+      data: {
+        userId: userId,
+        isbn: ISBN,
+      },
+    }
+  );
   const responseBody = response.json();
   expect(response.status()).toBe(200);
   console.log("put test", responseBody);
@@ -122,6 +126,6 @@ test("Get user2", async ({ request }) => {
   });
   const responseBody = await response.json();
   expect(response.status()).toBe(200);
-//   expect(responseBody.books.length).toBeFalsy();
+  //   expect(responseBody.books.length).toBeFalsy();
   console.log("response", responseBody, "expect", responseBody.books.length);
 });
