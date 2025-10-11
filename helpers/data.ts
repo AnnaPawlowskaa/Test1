@@ -3,7 +3,7 @@ import 'dotenv/config'
 export const data = {
   firstName: "Regina",
   lastName: "Phalangie",
-  email: "regina.p@gmail.com",
+  email: "regina.p2@gmail.com",
   address1: "48th Av",
   city: "NYC",
   region: "3655",

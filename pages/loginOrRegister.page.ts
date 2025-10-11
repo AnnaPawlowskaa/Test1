@@ -27,6 +27,7 @@ export class LoginOrRegisterPage {
         await expect(this.firstField).toBeVisible()
     }
     async fillLoginInputs(): Promise<void> {
+        await this.page.waitForLoadState();
         await this.loginNameField.fill(process.env.USER2 as string);
         await this.passwordField.fill(process.env.PASSWORD2 as string);
         await expect(this.loginNameField).toHaveValue(process.env.USER2 as string);
