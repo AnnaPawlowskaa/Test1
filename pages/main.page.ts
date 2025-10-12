@@ -18,9 +18,7 @@ export class MainPage {
     this.apparelLink = this.page.getByRole("link", {
       name: "Apparel & accessories",
     });
-    this.tshirtLink = this.page
-      .locator("#categorymenu")
-      .getByRole("link", { name: "T-shirts" });
+    this.tshirtLink = this.page.locator('#maincontainer').getByRole('link',  {name: 'T-shirts', exact: true});
     this.heading = this.page.locator(".heading1");
   }
 
@@ -38,9 +36,11 @@ export class MainPage {
   }
 
   async goToTshirtPage(): Promise<void> {
-    await this.apparelLink.hover();
+    await this.apparelLink.click();
+    console.log("hovered");
     await this.tshirtLink.click();
-    await expect(this.heading).toContainText("T-shirts")
+    console.log("clicked");
+    await expect(this.heading).toContainText("    T-shirts")
   }
 
   async method1(userName: string, password: string): Promise<void> {}

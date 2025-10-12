@@ -28,6 +28,7 @@ export default defineConfig({
   },
 
   projects: [
+    { name: "setup", testMatch: /.*\.setup\.ts/ },
     {
       name: "dev",
       use: {
@@ -40,7 +41,9 @@ export default defineConfig({
       use: {
         baseURL: urls.automationTestStoreURL,
         ...devices["Desktop Chrome"],
+        storageState: "./.auth/user.json",
       },
+      dependencies: ["setup"],
     },
     {
       name: "no.browser",

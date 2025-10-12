@@ -16,14 +16,16 @@ test.skip("registration test", async ({
   });
 });
 
-test("login test", async ({ mainPage, loginOrRegisterPage }) => {
+test.skip("login test", async ({ mainPage, loginOrRegisterPage}) => {
   await mainPage.openMainPage();
   await mainPage.openLoginOrRegister();
   await loginOrRegisterPage.fillLoginInputs();
   await loginOrRegisterPage.clickLoginButton();
 });
 
-test("go to T-shirt page", async ({ mainPage }) => {
+test("go to T-shirt page", async ({ page, mainPage }) => {
   await mainPage.openMainPage();
+
   await mainPage.goToTshirtPage();
+  await page.pause();
 });

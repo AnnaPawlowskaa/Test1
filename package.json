@@ -11,9 +11,10 @@
     "dev.visible": "npx playwright test --project=chrome --headed",
     "dates": "npx playwright test tests/dates.spec.ts --project=no.browser",
     "faker": "npx playwright test tests/faker.spec.ts --project=no.browser",
-    "store": "npx playwright test --project=store",
+    "store": "npx playwright test tests/pw.spec.ts --project=store --headed",
     "mock": "npx playwright test tests/mock.spec.ts --project=chrome --headed",
-    "ws": "npx playwright test tests/ws.spec.ts --project=chrome --headed"
+    "ws": "npx playwright test tests/ws.spec.ts --project=chrome --headed",
+    "db": "npx playwright test tests/db.spec.ts --project=no.browser"
   },
   "repository": {
     "type": "git",
@@ -30,11 +31,13 @@
     "@faker-js/faker": "^9.6.0",
     "@playwright/test": "^1.56.0",
     "@types/node": "^22.13.11",
+    "@types/pg": "^8.15.5",
     "@types/ws": "^8.18.1"
   },
   "dependencies": {
     "dayjs": "^1.11.13",
     "dotenv": "^16.6.1",
+    "pg": "^8.16.3",
     "ws": "^8.18.3"
   }
 }
