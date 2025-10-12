@@ -1,5 +1,4 @@
 import {Client} from "pg";
-import {test, expect } from "@playwright/test";
 import * as dotenv from "dotenv";
 
 const client = new Client({
