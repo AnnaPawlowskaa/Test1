@@ -1,5 +1,4 @@
 import { Page, expect, Locator } from "@playwright/test";
-import 'dotenv/config'
 import { data } from "../helpers/data";
 
 export class LoginOrRegisterPage {

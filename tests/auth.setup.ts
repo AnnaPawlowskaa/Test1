@@ -1,7 +1,6 @@
 import { test as setup, expect } from '@playwright/test';
 import path from 'path';
 import { urls } from '../helpers/data';
-import dotenv from 'dotenv';
 
 const authFile = path.join(__dirname, "../.auth/user.json");
 const {automationTestStoreURL} = urls;

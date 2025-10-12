@@ -1,6 +1,5 @@
 import { test, expect, request } from "@playwright/test";
 import { urls, userId, ISBN } from "../helpers/data";
-import "dotenv/config";
 
 test.describe.configure({ mode: "serial" });
 let token: string;

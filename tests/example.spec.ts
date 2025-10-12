@@ -1,5 +1,4 @@
 import { test, expect } from "@playwright/test";
-import "dotenv/config";
 import { urls } from '../helpers/data' ;
 
 
